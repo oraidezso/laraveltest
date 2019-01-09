@@ -15,6 +15,14 @@
                     @endif
                         Felhasználónév: {{ Auth::user()->name }} <br>
                         Utolsó belépés ideje: {{ Auth::user()->lastLogin }} <br>
+                        Szerepkörök:
+                        @foreach (DB::table('role_user')
+                                ->where('user_id',Auth::user()->id)
+                                ->join('roles','roles.id','=','role_user.role_id')
+                                ->get()
+                                as $role)
+                            {{$role->description}}@if (!$loop->last), @endif
+                        @endforeach
                 </div>
             </div>
         </div>
