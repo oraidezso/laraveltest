@@ -5,16 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">@yield('header')</div>
 
                 <div class="card-body">
+                    @yield('cont')
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                        Felhasználónév: {{ Auth::user()->name }} <br>
-                        Utolsó belépés ideje: {{ Auth::user()->lastLogin }} <br>
                 </div>
             </div>
         </div>
