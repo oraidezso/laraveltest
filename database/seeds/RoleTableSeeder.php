@@ -12,13 +12,19 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        $role_employee = new Role();
-        $role_employee->name = 'employee';
-        $role_employee->description = 'A Employee User';
-        $role_employee->save();
-        $role_manager = new Role();
-        $role_manager->name = 'manager';
-        $role_manager->description = 'A Manager User';
-        $role_manager->save();
+        DB::table('roles')->delete();
+        DB::table('role_user')->delete();
+        Role::create(array(
+            'name'     => 'admin',
+            'description' => 'Adminisztrátor'
+        ));
+        Role::create(array(
+            'name'     => 'tsz',
+            'description' => 'Tartalomszerkesztő'
+        ));
+        Role::create(array(
+            'name'     => 'bf',
+            'description' => 'Bejelentkezett felhasználó'
+        ));
     }
 }
