@@ -23,9 +23,34 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                @guest
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                @else
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        Home
+                    </a>
+                    
+                    @if (Auth::user()->hasRole('bf'))
+                    <a class="navbar-brand" href="{{ url('/bf') }}">
+                        Felhasználó
+                    </a>
+                    @endif
+
+                    @if (Auth::user()->hasRole('tsz'))
+                    <a class="navbar-brand" href="{{ url('/tsz') }}">
+                        Tartalom Szerkesztő
+                    </a>
+                    @endif
+
+                    @if (Auth::user()->hasRole('admin'))
+                    <a class="navbar-brand" href="{{ url('/admin') }}">
+                        Admin Page
+                    </a>
+                    @endif
+                @endguest
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
