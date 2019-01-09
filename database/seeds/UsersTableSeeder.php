@@ -1,0 +1,32 @@
+<?php
+use Illuminate\Database\Seeder;
+use App\User;
+
+class UsersTableSeeder extends Seeder
+{
+
+    public function run()
+    {
+        DB::table('users')->delete();
+        User::create(array(
+            'name'     => 'Admin',
+            'email'    => 'Admin@Admin.io',
+            'password' => Hash::make('Admin'),
+        ));
+        User::create(array(
+            'name'     => 'User 1',
+            'email'    => 'User1@User.io',
+            'password' => Hash::make('User1'),
+        ));
+        User::create(array(
+            'name'     => 'User 2',
+            'email'    => 'User2@User.io',
+            'password' => Hash::make('User2'),
+        ));
+        User::create(array(
+            'name'     => 'User 3',
+            'email'    => 'User3@User.io',
+            'password' => Hash::make('User3'),
+        ));
+    }
+}
