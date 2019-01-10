@@ -18,12 +18,12 @@ class PagesController extends Controller
     }
     public function tsz(Request $request)
     {
-        $request->user()->authorizeRoles(['tsz']);
+        $request->user()->authorizeRoles(['admin','tsz']);
         return view('pages.tsz');
     }
     public function bf(Request $request)
     {
-        $request->user()->authorizeRoles(['bf']);
+        $request->user()->authorizeRoles(['admin','bf']);
         return view('pages.bf');
     }
 }
