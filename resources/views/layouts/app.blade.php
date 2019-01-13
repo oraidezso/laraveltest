@@ -32,13 +32,13 @@
                         Home
                     </a>
                     
-                    @if (Auth::user()->authorizeRoles(['admin','bf']))
+                    @if (Auth::user()->hasAnyRole(['admin','bf']))
                     <a class="navbar-brand" href="{{ url('/bf') }}">
                         Felhasználó
                     </a>
                     @endif
 
-                    @if (Auth::user()->authorizeRoles(['admin','tsz']))
+                    @if (Auth::user()->hasAnyRole(['admin','tsz']))
                     <a class="navbar-brand" href="{{ url('/tsz') }}">
                         Tartalom Szerkesztő
                     </a>
