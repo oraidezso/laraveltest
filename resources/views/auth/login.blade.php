@@ -50,7 +50,18 @@
                                 </div>
                             </div>
                         </div>
-
+                        
+                        @if (Session::get('numberOfAttempts')>2)
+                            <div class="form-group row">
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="form-check">
+                                        <div class="g-recaptcha" data-sitekey="{{ env('SETTINGS_GOOGLE_RECAPTCHA_SITE_KEY') }}"></div>
+                                        <script src="https://www.google.com/recaptcha/api.js"></script>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
