@@ -14,7 +14,7 @@
                         </div>
                     @endif
                         Felhasználónév: {{ Auth::user()->name }} <br>
-                        Utolsó belépés ideje: {{ Auth::user()->lastLogin }} <br>
+                        Utolsó belépés ideje: {{ Auth::user()->lastLogin ?:"Most léptél be elösször." }} <br>
                         Szerepkörök:
                         @foreach (DB::table('role_user')
                                 ->where('user_id',Auth::user()->id)
