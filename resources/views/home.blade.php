@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        Felhasználónév: {{ Auth::user()->name }} <br>
+                        Felhasználónév: {{ Auth::user()->username }} <br>
                         Utolsó belépés ideje: {{ Auth::user()->lastLogin ?:"Most léptél be elösször." }} <br>
                         Szerepkörök:
                         @foreach (DB::table('role_user')

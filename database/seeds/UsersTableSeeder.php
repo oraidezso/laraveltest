@@ -11,27 +11,27 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
         $admin = User::create(array(
             'name'     => 'Admin',
-            'username' => 'admin',
+            'username' => 'Admin',
             'email'    => 'Admin@Admin.io',
-            'password' => Hash::make('Admin'),
+            'password' => Hash::make('a'),
         ));
         $user1 = User::create(array(
-            'name'     => 'User 1',
-            'username' => 'user1',
+            'name'     => 'Asd',
+            'username' => 'User 1',
             'email'    => 'User1@User.io',
-            'password' => Hash::make('user1'),
+            'password' => Hash::make('a'),
         ));
         $user2 = User::create(array(
-            'name'     => 'User 2',
-            'username' => 'user2',
+            'name'     => 'Béla',
+            'username' => 'User 2',
             'email'    => 'User2@User.io',
-            'password' => Hash::make('user2'),
+            'password' => Hash::make('a'),
         ));
         $user3 = User::create(array(
-            'name'     => 'User 3',
-            'username' => 'user3',
+            'name'     => 'Sanyi',
+            'username' => 'User 3',
             'email'    => 'User3@User.io',
-            'password' => Hash::make('user3'),
+            'password' => Hash::make('a'),
         ));
 
 
