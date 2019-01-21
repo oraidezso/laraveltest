@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'PagesController@admin');
-Route::get('/tsz', 'PagesController@tsz');
-Route::get('/bf', 'PagesController@bf');
+Route::get('/tartalomSzerkeszto', 'PagesController@tartalomSzerkeszto');
+Route::get('/bejelentkezettFelhasznalo', 'PagesController@bejelentkezettFelhasznalo');

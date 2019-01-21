@@ -33,13 +33,13 @@
                     </a>
                     
                     @if (Auth::user()->hasAnyRole(['admin','bf']))
-                    <a class="navbar-brand" href="{{ url('/bf') }}">
+                    <a class="navbar-brand" href="{{ url('/bejelentkezettFelhasznalo') }}">
                         Felhasználó
                     </a>
                     @endif
 
                     @if (Auth::user()->hasAnyRole(['admin','tsz']))
-                    <a class="navbar-brand" href="{{ url('/tsz') }}">
+                    <a class="navbar-brand" href="{{ url('/tartalomSzerkeszto') }}">
                         Tartalom Szerkesztő
                     </a>
                     @endif

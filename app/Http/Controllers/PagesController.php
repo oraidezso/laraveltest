@@ -17,12 +17,12 @@ class PagesController extends Controller
         $request->user()->authorizeRoles(['admin']);
         return view('pages.admin');
     }
-    public function tsz(Request $request)
+    public function tartalomSzerkeszto(Request $request)
     {
         $request->user()->authorizeRoles(['admin','tsz']);
         return view('pages.tsz');
     }
-    public function bf(Request $request)
+    public function bejelentkezettFelhasznalo(Request $request)
     {
         $request->user()->authorizeRoles(['admin','bf']);
         return view('pages.bf');
