@@ -16,11 +16,7 @@
                         Felhasználónév: {{ Auth::user()->username }} <br>
                         Utolsó belépés ideje: {{ Auth::user()->lastLogin ?:"Most léptél be elösször." }} <br>
                         Szerepkörök:
-                        @foreach (DB::table('role_user')
-                                ->where('user_id',Auth::user()->id)
-                                ->join('roles','roles.id','=','role_user.role_id')
-                                ->get()
-                                as $role)
+                        @foreach (Auth::user()->roles()->get() as $role)
                             {{$role->description}}@if (!$loop->last), @endif
                         @endforeach
                 </div>
