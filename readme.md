@@ -11,7 +11,7 @@ This is my first try with the laravel framework.
 4. Setup the .env file. it should contain your database, email, google captcha attributes. The most important is the database.  
 5. Assuming you have a new database:
     1. run `php artisan migrate` create necesary table structure in the database
-    2. run `php artisan db:seed` load the basic data to the tables
+    2. <del>run `php artisan db:seed` load the basic data to the tables</del> (added db seed to migration file)
 6. run `php artisan serve` to start the server
 
 ## About Laravel
